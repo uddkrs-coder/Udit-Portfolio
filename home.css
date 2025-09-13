@@ -1,0 +1,89 @@
+/* --- Home Section --- */
+#home.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 40px;
+    overflow: hidden;
+    min-height: 100vh;
+    background: #121212;
+}
+
+.greeting {
+    font-size: 100px;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1.5s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.wave {
+    font-size: 70px;
+    margin-left: 15px;
+    display: inline-block;
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 75% 50%;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+.intro {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: slideUp 1.5s ease-out 0.5s both;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.tagline {
+    font-family: 'Courier New', monospace;
+    font-size: 28px;
+    color: #e0e0e0;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-out 1s both, typewriter 4s steps(35) 2s both, blink 1s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #e0e0e0;
+    max-width: 0;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 0.9; } }
+@keyframes typewriter { from { max-width: 0; } to { max-width: 100%; } }
+@keyframes blink { from, to { border-color: transparent; } 50% { border-color: #e0e0e0; } }
+
+@media (max-width: 768px) {
+    #home.main-content {
+        padding: 0 20px;
+    }
+
+    .greeting, .intro {
+        font-size: 50px;
+    }
+
+    .wave {
+        font-size: 35px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+}
